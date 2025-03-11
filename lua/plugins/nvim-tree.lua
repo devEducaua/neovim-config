@@ -33,6 +33,7 @@ return {
 					end,
 				},
 			},
+          auto_close = true,    -- Fecha automaticamente ao sair do nvim-tree
     })
     vim.api.nvim_set_keymap('n', '<C-e>', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
