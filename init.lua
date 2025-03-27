@@ -19,7 +19,7 @@ vim.keymap.set('n', '<A-q>', '<C-w>q', { noremap = true, silent = true })
 vim.cmd("set termguicolors")
 vim.cmd("syntax enable")
 
-vim.cmd("highlight Normal guibg=none")  -- Faz o fundo da área principal transparente
-vim.cmd("highlight NonText guibg=none") -- Para as áreas não editáveis (linhas de status, etc.)
-vim.cmd("highlight SignColumn guibg=none") -- Coluna de sinais
-
+vim.cmd("highlight Normal guibg=none")
+vim.cmd("highlight NonText guibg=none") 
+vim.cmd("highlight SignColumn guibg=none") 
+vim.cmd("highlight NvimTreeNormalFloat guibg=none")
