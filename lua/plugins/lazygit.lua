@@ -16,6 +16,6 @@ return {
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
-        { "<A-l>", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        { "<A-g>", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
 }
