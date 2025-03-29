@@ -7,10 +7,10 @@ return {
             direction = "float",     
             float_opts = {
                 height = 40,
-                width = 180,
-                col = 6,
+                width = 140,
+                col = 40,
                 row = 2,
-                border = "rounded",
+                border = "curved",
             },
             hightlights = {
                 Normal = {
