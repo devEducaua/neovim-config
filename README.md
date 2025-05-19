@@ -1,12 +1,6 @@
-Alpha.nvim
-![image](https://github.com/user-attachments/assets/c2ebf5c8-9202-4344-b1ce-45a4acf0a2a9)
----
-Toggleterm.nvim
-![image](https://github.com/user-attachments/assets/012dd33f-ed0c-46fa-bac0-fb824bf92452)
----
-Nvim-tree.nvim
-![image](https://github.com/user-attachments/assets/d15c7644-2df1-4650-a057-d2164d38b92f)
----
+# About
+This is my neovim config, is comfy for me.
+![Screenshot](lua/config/screenshot.png)
 
 # Main Plugins
 
@@ -31,4 +25,3 @@ Nvim-tree.nvim
 - [themify](https://github.com/LmanTW/themify.nvim)
 - [transparent](https://github.com/xiyaowong/transparent.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-
