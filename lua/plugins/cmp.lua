@@ -10,6 +10,11 @@ return {
     local cmp = require("cmp")
 
     cmp.setup({
+      snippets = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+      },
       mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),

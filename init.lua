@@ -1,5 +1,7 @@
 require("config.lazy")
 
+-- vim.cmd("colorscheme lackluster")
+
 vim.o.number = true
 vim.o.relativenumber = true
 
@@ -16,10 +18,16 @@ vim.keymap.set('n', '<A-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-q>', '<C-w>q', { noremap = true, silent = true })
 
+vim.keymap.set({'n', 'i', 'v'}, '<Up>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Down>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Left>', '<Nop>')
+vim.keymap.set({'n', 'i', 'v'}, '<Right>', '<Nop>')
+
+
 vim.cmd("set termguicolors")
 vim.cmd("syntax enable")
 
-vim.opt.showmode = false
+vim.o.showmode = false
 
 vim.api.nvim_create_autocmd("WinClosed", {
   pattern = "*",

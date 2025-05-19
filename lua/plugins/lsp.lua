@@ -13,11 +13,10 @@ return {
     local lspconfig = require("lspconfig")
 
     -- Configuração para cada LSP instalado
-    local servers = { "pyright", "prismals","somesass_ls","lua_ls", "ts_ls", "rust_analyzer", "clangd", "svelte", "cssls", "html", "tailwindcss" }
+    local servers = { "pyright","hls", "bashls" , "gopls" , "jdtls", "prismals","somesass_ls","lua_ls", "ts_ls", "rust_analyzer", "clangd","texlab","svelte", "cssls", "html", "tailwindcss" }
 
     for _, server in ipairs(servers) do
       lspconfig[server].setup({})
     end
   end
 }
-

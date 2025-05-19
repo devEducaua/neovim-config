@@ -21,5 +21,6 @@ return {
             -- Also the user event "TransparentClear" will be triggered
             on_clear = function() end,
         })
+        vim.api.nvim_set_keymap("n", "<A-p>", ":TransparentToggle<CR>", { noremap = true, silent = true })
     end
 }
