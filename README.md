@@ -1,8 +1,34 @@
-# About
-This is my neovim config, is comfy for me.
-![Screenshot](lua/config/screenshot.png)
+# Introduction
+This is my neovim-config, it is comfy for me. 
+I use Lazy for the plugins, below has a list of all plugins and the build instructions.
 
-# Main Plugins
+---
+![Screenshot](lua/config/screenshot.png)
+---
+
+# How to Build
+if you are on Linux
+1. clone the repository in the ~/.config/
+```Shell
+git clone https://github.com/devEducaua/neovim-config
+
+```
+2. Change the name of the folder
+```Shell
+mv ~/.config/neovim-config ~/.config/nvim
+
+```
+3. Run nvim on the terminal
+```Shell
+nvim
+```
+4. Inside of the nvim run
+```Shell
+:Lazy
+```
+
+# Plugins
+## Main Plugins
 
 | function | plugin |
 | -------- | ------ |
@@ -12,7 +38,7 @@ This is my neovim config, is comfy for me.
 | fuzzyfinder | [telescope](https://github.com/nvim-telescope/telescope.nvim) |
 | terminal | [toggleterm](https://github.com/akinsho/toggleterm.nvim) |
 
-# Secondary plugins
+## Secondary plugins
 - [alpha](https://github.com/goolord/alpha-nvim)
 - [autopairs](https://github.com/windwp/nvim-autopairs)
 - [comment](https://github.com/numToStr/Comment.nvim)
