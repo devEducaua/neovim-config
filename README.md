@@ -4,17 +4,20 @@ This is minimal config of neovim, I remove all the useless things that I have
 # How to build
 
 1. clone this repo
+
 ```sh
 git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 
 ```
 
 2. open nvim and run
+
 ```nvim
 :Lazy
 ```
 
 # Structure
+```
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
@@ -36,6 +39,7 @@ git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 │       └── init.lua
 ├── PLUGINS.md
 └── README.md
+```
 
 - init.lua has general configurations
 - config/ bootstrap the lazy.nvim and set the keymaps
