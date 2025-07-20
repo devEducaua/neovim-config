@@ -1,0 +1,14 @@
+# Lazy.nvim
+- cmp
+- lspconfig 
+- mason
+- lualine
+- luasnip
+- transparent
+- telescope
+- telescope-file-browser
+- comment
+- treesitter
+- toggleterm
+- indent-blankline
+- oil
