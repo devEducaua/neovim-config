@@ -18,8 +18,10 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
+            "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
             "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets"
         },
         config = require("plugins.config.cmp")
     },
@@ -36,12 +38,6 @@ return {
     },
 
     {
-      'akinsho/toggleterm.nvim',
-       version = "*",
-       config = require("plugins.config.toggleterm")
-    },
-
-    {
         "nvim-telescope/telescope.nvim",
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = require("plugins.config.telescope")
@@ -52,22 +48,6 @@ return {
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         config = require("plugins.config.treesitter")
-    },
-
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        ---@module "ibl"
-        ---@type ibl.config
-        config = require("plugins.config.ibl")
-    },
-
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = { "rafamadriz/friendly-snippets" },
-        config = function ()
-            require("luasnip.loaders.from_vscode").lazy_load()
-        end
     },
 
     {
@@ -87,10 +67,6 @@ return {
         ---@type oil.SetupOpts
         dependencies = { "nvim-tree/nvim-web-devicons" },
         lazy = false,
-        config = function ()
-            require("oil").setup({
-                default_file_explorer = true
-            })
-        end
+        config = require("plugins.config.oil")
     }
 }

@@ -4,12 +4,14 @@ This is minimal config of neovim, I remove all the useless things that I have
 # How to build
 
 1. clone this repo
-```sh
+
+```bash
 git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 
 ```
 
 2. open nvim and run
+
 ```nvim
 :Lazy
 ```

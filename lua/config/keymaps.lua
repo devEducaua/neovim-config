@@ -1,5 +1,7 @@
 local key = vim.api.nvim_set_keymap
 
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
 key('n', '<A-f>', "<cmd>Telescope find_files<cr>", { noremap = true, silent = true})
 key('n', '<A-r>', "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true})
 key('n', '<A-t>', "<cmd>Telescope colorscheme<cr>", { noremap = true, silent = true})
@@ -7,3 +9,5 @@ key('n', '<A-h>', "<cmd>Telescope help_tags<cr>", { noremap = true, silent = tru
 
 key("n", "-", "<cmd>Oil<CR>", {})
 key("n", "<A-p>", ":TransparentToggle<CR>", { noremap = true, silent = true })
+
+key('n', '<space>t', '<cmd>Cmd<CR>', {})

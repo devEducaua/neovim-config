@@ -1,5 +1,6 @@
 require("config.lazy")
 require("config.keymaps")
+require("config.snippets")
 
 local cmd = vim.cmd
 local o = vim.o
@@ -22,3 +23,11 @@ cmd [[ highlight NonText guifg=#1e1e1e ]]
 opt.list = true
 opt.listchars = { space = "•" }
 opt.fillchars = { eob = " ", vert = " "}
+
+vim.api.nvim_create_autocmd('TermOpen', {
+    group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+    callback = function ()
+        o.number = false
+        o.relativenumber = false
+    end
+})
