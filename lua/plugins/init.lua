@@ -37,6 +37,15 @@ return {
         priority = 1000,
     },
 
+    -- {
+    --     dir = "~/code/colorscheme-nv/"
+    -- },
+    {
+        "devEducaua/oradark.nvim",
+        lazy = false,
+        priority = 1000
+    },
+
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { 'nvim-lua/plenary.nvim' },
