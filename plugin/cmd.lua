@@ -1,4 +1,4 @@
-vim.api.nvim_create_user_command('Cmd', function (args)
+function cmd(args)
     local arg = 'term'
 
     vim.cmd.new()
@@ -13,4 +13,7 @@ vim.api.nvim_create_user_command('Cmd', function (args)
     end
 
     vim.cmd(arg)
-end, { nargs = "*" })
+end
+
+vim.api.nvim_create_user_command('Cmd', cmd, { nargs = "*" })
+vim.api.nvim_create_user_command('C', cmd, { nargs = "*" })
