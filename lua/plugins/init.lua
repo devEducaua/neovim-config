@@ -37,10 +37,14 @@ return {
     },
 
     {
-        "devEducaua/oradark.nvim",
-        lazy = false,
-        priority = 1000
+        dir = "~/code/oradark.nvim/"
     },
+
+    -- {
+    --     "devEducaua/oradark.nvim",
+    --     lazy = false,
+    --     priority = 1000
+    -- },
 
     {
         "nvim-telescope/telescope.nvim",
@@ -63,6 +67,7 @@ return {
 
     {
         "xiyaowong/transparent.nvim",
+        enable = false,
         config = require("plugins.config.transparent")
     },
 
