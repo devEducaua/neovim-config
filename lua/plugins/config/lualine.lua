@@ -1,4 +1,4 @@
-local mydark = {
+local dark = {
     normal = {
         a = { fg = '#dddddd', bg = '#000000', gui = 'bold' },
         b = { fg = '#777777', bg = '#000000' },
@@ -31,10 +31,14 @@ local mydark = {
     },
 }
 
+local function fileformattext()
+  return [[POSIX]]
+end
+
 return function ()
     require('lualine').setup {
             options = {
-                theme = mydark,
+                theme = dark,
                 icons_enable = true,
                 globalstatus = true,
                 always_divide_middle = true,
@@ -42,14 +46,15 @@ return function ()
                       statusline = {},
                       winbar = {},
                 },
+                component_separators = { left = '•', right = '•'},
                 ignore_focus = {}
             },
             sections = {
                 lualine_a = {'mode'},
-                lualine_b = {'branch'},
+                lualine_b = {'branch', 'diff', 'diagnostics'},
                 lualine_c = {'filename'},
-                lualine_x = {'fileformat', 'filetype'},
-                lualine_y = {'progress'},
+                lualine_x = { fileformattext, 'filetype'},
+                lualine_y = {'location'},
                 lualine_z = {}
               }
         }
