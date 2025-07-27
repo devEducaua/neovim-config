@@ -30,16 +30,12 @@ return {
 
     { 'windwp/nvim-autopairs', opts = {} },
 
-    -- example lazy.nvim install setup
     {
         "slugbyte/lackluster.nvim",
         lazy = false,
         priority = 1000,
     },
 
-    -- {
-    --     dir = "~/code/colorscheme-nv/"
-    -- },
     {
         "devEducaua/oradark.nvim",
         lazy = false,

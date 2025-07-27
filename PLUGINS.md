@@ -4,11 +4,11 @@
 - mason
 - lualine
 - luasnip
+- nvim-autopairs
 - transparent
 - telescope
-- telescope-file-browser
 - comment
+- lackluster
+- oradark
 - treesitter
-- toggleterm
-- indent-blankline
 - oil

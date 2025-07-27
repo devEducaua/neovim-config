@@ -1,7 +1,6 @@
 return function ()
     require("telescope").setup({
-        file_ignore_patterns = { "node_modules" },
-        -- file_ignore_patterns = { "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*" },
+        file_ignore_patterns = { "node_modules", ".git" },
         defaults = {
             layout_config = {
                 vertical = { width = 0.5 }
