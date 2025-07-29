@@ -12,7 +12,10 @@ o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4
 o.expandtab = true
+
 o.showmode = true
+
+o.cmdheight = 0
 
 cmd("set termguicolors")
 cmd("syntax enable")
@@ -23,7 +26,14 @@ cmd [[ highlight Whitespace guifg=#1e1e1e ]]
 cmd [[ highlight NonText guifg=#1e1e1e ]]
 
 opt.list = true
-opt.listchars = { space = "•" }
+opt.listchars = {
+    space = "•",
+    tab = "▸ ",
+    extends = '❯',
+    precedes = '❮',
+    nbsp = '␣',
+}
+
 opt.fillchars = { eob = " ", vert = " "}
 
 vim.api.nvim_create_autocmd('TermOpen', {

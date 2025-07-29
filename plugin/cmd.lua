@@ -17,3 +17,5 @@ end
 
 vim.api.nvim_create_user_command('Cmd', cmd, { nargs = "*" })
 vim.api.nvim_create_user_command('C', cmd, { nargs = "*" })
+
+vim.api.nvim_create_user_command('Tree', ':Cmd tree --gitignore', { nargs = "*" })
