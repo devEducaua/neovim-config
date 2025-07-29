@@ -11,4 +11,11 @@ vim.api.nvim_set_keymap('n', '<A-i>', "<cmd>Telescope highlights<cr>", { noremap
 vim.api.nvim_set_keymap("n", "-", "<cmd>Oil<CR>", {})
 vim.api.nvim_set_keymap("n", "<A-p>", ":TransparentToggle<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<space>t', '<cmd>Cmd<CR>', {})
+vim.api.nvim_set_keymap('n', '<space>c', ':Cmd ', {})
+
+vim.api.nvim_set_keymap('n', '<space>g', ':Cmd git ', {})
+vim.api.nvim_set_keymap('n', '<space>gt', ':Cmd git status<CR>', {})
+vim.api.nvim_set_keymap('n', '<space>gf', ':Cmd git diff<CR>', {})
+
+vim.api.nvim_set_keymap('n', '<space>w', ':w<CR>', {})
+vim.api.nvim_set_keymap('n', '<space>x', ':x<CR>', {})
