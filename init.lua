@@ -14,14 +14,11 @@ o.softtabstop = 4
 o.expandtab = true
 
 o.showmode = true
-
 o.cmdheight = 0
 
 cmd("set termguicolors")
 cmd("syntax enable")
 cmd("colorscheme oradark")
--- cmd("colorscheme lackluster-dark")
-
 cmd [[ highlight Whitespace guifg=#1e1e1e ]]
 cmd [[ highlight NonText guifg=#1e1e1e ]]
 
