@@ -15,3 +15,4 @@ ls.add_snippets("typescript", {
         t({ "", 'export default '}), rep(1), t(";")
     })
 })
+
