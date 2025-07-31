@@ -21,11 +21,26 @@ return function ()
             ["g."] = { "actions.toggle_hidden", mode = "n" },
             [","] = { "actions.cd", mode = "n" },
 
+            ["<space>l"] = {
+                desc = "download template license",
+                callback = function ()
+                    vim.fn.feedkeys(":License ")
+                end
+            },
+
             ["<space>h"] = {
-                desc = "pass to command line",
+                desc = "pass file to command",
+                callback = function ()
+                    local file = require("oil").get_cursor_entry().name
+                    vim.fn.feedkeys(":Cmd " .. getFullPath(file), "nt")
+                end
+            },
+            ["<space>b"] = {
+                desc = "compile",
                 callback = function ()
                     local name = require("oil").get_cursor_entry().name
-                    vim.fn.feedkeys(":Cmd " .. getFullPath(name), "nt")
+                    print(name)
+                    vim.cmd(":Compile " .. name)
                 end
             },
 
