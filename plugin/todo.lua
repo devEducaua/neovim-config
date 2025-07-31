@@ -1,4 +1,4 @@
-function todo()
+local function todo()
     vim.cmd.vnew()
     vim.cmd.wincmd("L")
     vim.cmd('e ~/links.md')
