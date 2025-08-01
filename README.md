@@ -1,5 +1,5 @@
-# My comfy config
-This is minimal config of neovim, I remove all the useless things that I have
+# What
+This begin with the idea of a minimal config, less lua, less plugins and etc. Less plugins I really like this idea, but less lua, no. I like so much writing my own commands and functions for use. The majority of they are in plugin/ folder.
 
 # How to build
 
@@ -9,7 +9,6 @@ This is minimal config of neovim, I remove all the useless things that I have
 git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 
 ```
-
 2. open nvim and run
 
 ```nvim
@@ -21,28 +20,28 @@ git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
-│   ├── config
-│   │   ├── keymaps.lua
-│   │   └── lazy.lua
-│   └── plugins
-│       ├── config
-│       │   ├── cmp.lua
-│       │   ├── ibl.lua
-│       │   ├── lsp.lua
-│       │   ├── lualine.lua
-│       │   ├── mason.lua
-│       │   ├── oil.lua
-│       │   ├── telescope.lua
-│       │   ├── toggleterm.lua
-│       │   ├── transparent.lua
-│       │   └── treesitter.lua
-│       └── init.lua
+│   ├── config
+│   │   ├── keymaps.lua
+│   │   ├── lazy.lua
+│   │   └── snippets.lua
+│   └── plugins
+│       ├── config
+│       │   ├── cmp.lua
+│       │   ├── lsp.lua
+│       │   ├── lualine.lua
+│       │   ├── mason.lua
+│       │   ├── oil.lua
+│       │   ├── telescope.lua
+│       │   ├── transparent.lua
+│       │   └── treesitter.lua
+│       └── init.lua
+├── plugin
+│   ├── cmd.lua
+│   ├── compile.lua
+│   ├── licenses.lua
+│   ├── man.lua
+│   ├── todo.lua
+│   └── zoom.lua
 ├── PLUGINS.md
 └── README.md
 ```
-
-- init.lua has general configurations
-- config/ bootstrap the lazy.nvim and set the keymaps
-- plugins/
-    - plugins.lua install the plugins
-    - config/ has the configuration of they
