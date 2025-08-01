@@ -77,6 +77,6 @@ return {
         ---@type oil.SetupOpts
         dependencies = { "nvim-tree/nvim-web-devicons" },
         lazy = false,
-        config = require("plugins.config.oil")
+        config = require("plugins.config.oil"),
     }
 }
