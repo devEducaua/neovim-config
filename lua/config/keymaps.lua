@@ -25,11 +25,11 @@ vim.api.nvim_set_keymap('n', '<space>s', ';iCmd grep -rn "', {})
 
 vim.api.nvim_set_keymap('n', '<space>g', ':Cmd git ', {})
 vim.api.nvim_set_keymap('n', '<space>gt', ':Cmd git status<CR>', {})
-vim.api.nvim_set_keymap('n', '<space>gf', ':Cmd git diff<CR>', {})
+vim.api.nvim_set_keymap('n', '<space>gd', ';iCmd git diff ', {})
 
-vim.api.nvim_set_keymap('n', '<space>gc', ';iCmd git commit -m "', {})
+vim.api.nvim_set_keymap('n', '<space>gco', ';iCmd git commit -m "', {})
 vim.api.nvim_set_keymap('n', '<space>gp', ';iCmd git push -u origin main', {})
-vim.api.nvim_set_keymap('n', '<space>gr', ';iCmd git clone ', {})
+vim.api.nvim_set_keymap('n', '<space>gcr', ';iCmd git clone ', {})
 
 vim.api.nvim_set_keymap('n', '<space>w', ':w<CR>', {})
 vim.api.nvim_set_keymap('n', '<space>x', ':x<CR>', {})
