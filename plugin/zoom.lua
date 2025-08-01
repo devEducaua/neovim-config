@@ -25,6 +25,4 @@ function T:toggle()
   self.toggle = not self.toggle
 end
 
-vim.api.nvim_create_user_command('Zoom', function ()
-    T:toggle()
-end, {})
+vim.api.nvim_create_user_command('Zoom', function () T:toggle() end, {})
