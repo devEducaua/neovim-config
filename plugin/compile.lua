@@ -1,9 +1,12 @@
-local function getFullPath(file)
+local function getPath(file)
     local dir = require("oil").get_current_dir(vim.api.nvim_get_current_buf())
     local temp_path = dir .. "/" .. file
     local full_path = string.gsub(temp_path, "//", "/")
-    string.gsub(full_path, "/home/edu/", "~/")
-    return full_path
+
+    local pwd = vim.fn.getcwd()
+    local local_path = string.gsub(full_path, pwd .. "/", "")
+
+    return local_path
 end
 
 vim.api.nvim_create_user_command("Compile",
@@ -20,43 +23,49 @@ function (d)
 
     local ext = file:match("%.[^%.]+$")
 
+    file = getPath(file)
+
+    local cmd = ""
+
     -- C
     if (ext == '.c') then
-        vim.cmd("Cmd gcc " .. file .. " -o " .. string.gsub(file, ".c", ""))
+        cmd = "gcc " .. file .. " -o " .. string.gsub(file, ".c", "")
 
     -- Haskell
     elseif (ext == '.hs') then
-        vim.cmd("Cmd ghc " .. file .. " -o " .. string.gsub(file, ".hs", ""))
+        cmd = "ghc " .. file .. " -o " .. string.gsub(file, ".hs", "")
 
     -- Kotlin
     elseif (ext == '.kt') then
-        vim.cmd(":Cmd kotlinc " .. file " -include-runtime " .. "-d " .. string.gsub(file, ".kt", "") .. ".jar")
+        cmd = "kotlinc " .. file " -include-runtime " .. "-d " .. string.gsub(file, ".kt", "") .. ".jar"
             --
     -- Python
     elseif (ext == '.py') then
-        vim.cmd("Cmd python3 " .. file)
+        cmd = "python3 " .. file
 
     -- Lua
     elseif (ext == '.lua') then
-        vim.cmd("Cmd lua " .. file)
+        cmd = "lua " .. file
 
     -- Php
     elseif (ext == '.php') then
-        vim.cmd("Cmd php " .. file)
+        cmd = "php " .. file
 
     -- Rust
     elseif (ext == '.rs') then
-        vim.cmd("Cmd cargo build")
+        cmd = "cargo build"
 
     -- Java
     elseif (ext == '.java') then
-        vim.cmd("Cmd javac " .. file)
+        cmd = "javac " .. file
 
     elseif (ext == '.md') then
-        vim.cmd("Cmd glow " .. file)
+        cmd = "glow " .. file
 
     else
         print("Unknown format")
     end
+
+    vim.cmd("Cmd " .. cmd)
 
 end, { nargs="*" })
