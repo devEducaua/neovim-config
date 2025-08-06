@@ -12,6 +12,8 @@ local function cmd(args)
         vim.cmd("startinsert")
     end
 
+    vim.cmd("resize -15<CR>")
+
     vim.cmd(arg)
 end
 
