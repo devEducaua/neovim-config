@@ -14,6 +14,9 @@ return function ()
         default_file_explorer = true,
         skip_confirm_for_simple_edits = true,
         watch_for_changes = true,
+        view_options = {
+            show_hidden = true,
+        },
         columns = {
             "icon",
             "type",
@@ -23,7 +26,7 @@ return function ()
         },
         keymaps = {
             ["g."] = { "actions.toggle_hidden", mode = "n" },
-            [","] = { "actions.cd", mode = "n" },
+            ["g,"] = { "actions.cd", mode = "n" },
 
             ["<space>l"] = {
                 desc = "download template license",
@@ -45,14 +48,6 @@ return function ()
                 callback = function ()
                     local file = require("oil").get_cursor_entry().name
                     vim.cmd(":Cmd cat " .. getPath(file))
-                end
-            },
-
-            ["<space>b"] = {
-                desc = "compile",
-                callback = function ()
-                    local name = require("oil").get_cursor_entry().name
-                    vim.cmd(":Compile " .. name)
                 end
             },
 
@@ -94,8 +89,5 @@ return function ()
                 end
             },
         },
-        view_options = {
-            show_hidden = true,
-        }
     })
 end
