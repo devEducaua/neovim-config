@@ -1,9 +1,20 @@
 return function ()
+    -- vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "none" })
+    -- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "none", fg = "none" })
+    -- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "none", fg = "none" })
+
     require("telescope").setup({
         file_ignore_patterns = { "node_modules", ".git" },
         defaults = {
+            border = false,
+            prompt_position = "bottom",
+            layout_strategy = 'bottom_pane',
+            sorting_strategy = 'ascending',
+            results_title = false,
             layout_config = {
-                vertical = { width = 0.5 }
+                width = 1,
+                height = 0.15,
+                preview_width = 0
             },
             mappings = {
                 i = {
