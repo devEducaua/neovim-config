@@ -1,5 +1,30 @@
 return {
     {
+        'stevearc/oil.nvim',
+        ---@module 'oil'
+        ---@type oil.SetupOpts
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        lazy = false,
+        config = require("plugins.config.oil"),
+    },
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = require("plugins.config.lualine")
+    },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = require("plugins.config.telescope")
+    },
+
+    {
+        dir = "~/projects/oradark.nvim/"
+    },
+
+    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason.nvim",
@@ -37,22 +62,6 @@ return {
     },
 
     {
-        dir = "~/code/oradark.nvim/"
-    },
-
-    -- {
-    --     "devEducaua/oradark.nvim",
-    --     lazy = false,
-    --     priority = 1000
-    -- },
-
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        config = require("plugins.config.telescope")
-    },
-
-    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
@@ -60,23 +69,7 @@ return {
     },
 
     {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = require("plugins.config.lualine")
-    },
-
-    {
         "xiyaowong/transparent.nvim",
-        enable = false,
         config = require("plugins.config.transparent")
     },
-
-    {
-        'stevearc/oil.nvim',
-        ---@module 'oil'
-        ---@type oil.SetupOpts
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        lazy = false,
-        config = require("plugins.config.oil"),
-    }
 }
