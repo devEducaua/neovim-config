@@ -21,7 +21,8 @@ return {
     },
 
     {
-        dir = "~/projects/oradark.nvim/"
+        dir = "~/projects/oradark.nvim/",
+        -- "devEducaua/oradark.nvim",
     },
 
     {
