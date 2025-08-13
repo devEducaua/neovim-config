@@ -1,6 +1,7 @@
 require("config.lazy")
 require("config.keymaps")
 require("config.snippets")
+require("config.commands")
 
 local cmd = vim.cmd
 local o = vim.o

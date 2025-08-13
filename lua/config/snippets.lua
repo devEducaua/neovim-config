@@ -26,3 +26,20 @@ ls.add_snippets("c", {
         t({ "", "}" }),
     })
 })
+
+ls.add_snippets("html", {
+    s("html", {
+        t("<DOCTYPE html>"),
+        t("<html>"),
+        t({"", "<head>"}),
+        t({"", "\t<meta charset='UTF-8'"}),
+        t({"", "\t<meta name='viewport' content='width=device-width, initial-scale=1.0'>"}),
+        t({"", "\t<title>Title</title>"}),
+        t({"", "\t<link href='style.css' rel='stylesheet'>"}),
+        t({"", "</head>"}),
+        t({"", "<body>"}),
+        t({"", "\t"}), i(1),
+        t({"", "</body>"}),
+        t({"", "</html>"}),
+    })
+})

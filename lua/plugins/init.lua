@@ -66,10 +66,5 @@ return {
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         config = require("plugins.config.treesitter")
-    },
-
-    {
-        "xiyaowong/transparent.nvim",
-        config = require("plugins.config.transparent")
-    },
+    }
 }
