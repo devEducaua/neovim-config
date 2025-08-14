@@ -26,6 +26,8 @@ vim.api.nvim_set_keymap('n', '<space>q', ':q<CR>', {})
 vim.api.nvim_set_keymap("n", "<A-s>", ":so $MYVIMRC<CR>", {})
 
 vim.keymap.set({'i', 'v', 'x', 'c', 't'}, "jk", "<esc>")
+vim.keymap.set({ 'i', 'x', 'v'}, "<esc>", "<Nop>")
+
 vim.keymap.set({'i', 'n', 'v', 'x', 'c', 't'}, '<C-y>', '"+y', {})
 vim.keymap.set("t", "<esc>", "<c-\\><c-n>")
 vim.keymap.set('n', '<space>;', 'q:', {})
