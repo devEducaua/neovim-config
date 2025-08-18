@@ -71,7 +71,7 @@ v.api.nvim_create_user_command('Tree', ':Cmd tree --gitignore', { nargs = "*" })
 v.api.nvim_create_user_command('License', get_licenses, { nargs = "*"})
 v.api.nvim_create_user_command('Td', todo, {})
 
-v.api.nvim_create_user_command('Man', function (d)
-    local args = d.fargs
-    v.cmd("Cmd man " .. args[1])
-end, { nargs="*" })
+-- v.api.nvim_create_user_command('Man', function (d)
+--     local args = d.fargs
+--     v.cmd("Cmd man " .. args[1])
+-- end, { nargs="*" })

@@ -20,7 +20,7 @@ vim.api.nvim_set_keymap('n', '<space>gp', '<space>;iCmd git push -u origin main'
 vim.api.nvim_set_keymap('n', '<space>gcr', '<space>;iCmd git clone ', {})
 
 vim.api.nvim_set_keymap('n', '<space>w', ':w<CR>', {})
-vim.api.nvim_set_keymap('n', '<space>x', '<space>w -', {})
+vim.api.nvim_set_keymap('n', '<space>x', ':w<CR> -', {})
 vim.api.nvim_set_keymap('n', '<space>!', ':q!<CR>', {})
 vim.api.nvim_set_keymap('n', '<space>q', ':q<CR>', {})
 vim.api.nvim_set_keymap("n", "<A-s>", ":so $MYVIMRC<CR>", {})
@@ -31,6 +31,13 @@ vim.keymap.set({ 'i', 'x', 'v'}, "<esc>", "<Nop>")
 vim.keymap.set({'i', 'n', 'v', 'x', 'c', 't'}, '<C-y>', '"+y', {})
 vim.keymap.set("t", "<esc>", "<c-\\><c-n>")
 vim.keymap.set('n', '<space>;', 'q:', {})
+
+-- vim.keymap.set('n', '<space>h', function()
+--     local name = require("oil").get_cursor_entry().name
+--     local keys = "q:" .. "iCmd " .. name .. "<esc>Bi"
+--     keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+--     vim.api.nvim_feedkeys(keys, 'n', false)
+-- end)
 
 vim.api.nvim_set_keymap('n', 'C-d', 'C-dzz', {})
 vim.api.nvim_set_keymap('n', 'C-u', 'C-uzz', {})
