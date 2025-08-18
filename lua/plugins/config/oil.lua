@@ -38,8 +38,12 @@ return function ()
             ["<space>h"] = {
                 desc = "pass file to command",
                 callback = function ()
-                    local file = require("oil").get_cursor_entry().name
-                    vim.fn.feedkeys(":Cmd " .. getPath(file), "nt")
+        --         local file = require("oil").get_cursor_entry().name
+        --         vim.api.nvim_set_keymap('n', "<space>h", "<space>;Cmd " .. file .. "jkB", {})
+                   local name = getPath(require("oil").get_cursor_entry().name)
+                   local keys = "q:" .. "iCmd " .. name .. "<esc>Bi"
+                   keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+                   vim.api.nvim_feedkeys(keys, 'n', false)
                 end
             },
 
