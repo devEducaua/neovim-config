@@ -1,13 +1,4 @@
-local function getPath(file)
-    local dir = require("oil").get_current_dir(vim.api.nvim_get_current_buf())
-    local temp_path = dir .. "/" .. file
-    local full_path = string.gsub(temp_path, "//", "/")
-
-    local pwd = vim.fn.getcwd()
-    local local_path = string.gsub(full_path, pwd .. "/", "")
-
-    return local_path
-end
+local commands = require("commands")
 
 return function ()
     require("oil").setup({
@@ -23,8 +14,7 @@ return function ()
             "permissions",
             "size",
             "mtime",
-        },
-        keymaps = {
+        }, keymaps = {
             ["g."] = { "actions.toggle_hidden", mode = "n" },
             ["g,"] = { "actions.cd", mode = "n" },
 
@@ -40,56 +30,57 @@ return function ()
                 callback = function ()
         --         local file = require("oil").get_cursor_entry().name
         --         vim.api.nvim_set_keymap('n', "<space>h", "<space>;Cmd " .. file .. "jkB", {})
-                   local name = getPath(require("oil").get_cursor_entry().name)
+                   local name = commands.get_path(require("oil").get_cursor_entry().name)
                    local keys = "q:" .. "iCmd " .. name .. "<esc>Bi"
                    keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
                    vim.api.nvim_feedkeys(keys, 'n', false)
                 end
             },
 
-            ["<space>ca"] = {
-                desc = "cat the file",
-                callback = function ()
-                    local file = require("oil").get_cursor_entry().name
-                    vim.cmd(":Cmd cat " .. getPath(file))
-                end
-            },
+            -- ["<space>ca"] = {
+            --     desc = "cat the file",
+            --     callback = function ()
+            --         local file = require("oil").get_cursor_entry().name
+            --         vim.cmd(":Cmd cat " .. getPath(file))
+            --     end
+            -- },
 
             ["<space>r"] = {
                 desc = "run file executables or Makefiles",
                 callback = function ()
                     local name = require("oil").get_cursor_entry().name
-                    if (name == "Makefile") then
-                        vim.cmd(":Cmd make")
-                    else
-                        vim.cmd(":Cmd ./" .. getPath(name))
-                    end
+                    commands.exec_by_name(name)
+                    -- if (name == "Makefile") then
+                    --     vim.cmd(":Cmd make")
+                    -- else
+                    --     vim.cmd(":Cmd ./" .. get_path(name))
+                    -- end
                 end
             },
 
-            ["<space>m"] = {
-                desc = "run Makefiles with params",
-                callback = function ()
-                    local file = require("oil").get_cursor_entry().name
-                    if (file == "Makefile") then
-                        vim.fn.feedkeys(":Cmd make ", "nt")
-                    end
-                end
-            },
+            -- ["<space>m"] = {
+            --     desc = "run Makefiles with params",
+            --     callback = function ()
+            --         local file = require("oil").get_cursor_entry().name
+            --         if (file == "Makefile") then
+            --             vim.fn.feedkeys(":Cmd make ", "nt")
+            --         end
+            --     end
+            -- },
 
             ["<space>ga"] = {
                 desc = "stage file on git",
                 callback = function ()
-                    local file = require("oil").get_cursor_entry().name
-                    vim.fn.feedkeys(":Cmd git add " .. getPath(file), "nt")
+                    local file = commands.get_path(require("oil").get_cursor_entry().name)
+                    vim.fn.feedkeys(":Cmd git add " .. get_path(file), "nt")
                 end
             },
 
             ["<space>grm"] = {
                 desc = "remove file from git",
                 callback = function ()
-                    local file = require("oil").get_cursor_entry().name
-                    vim.fn.feedkeys(":Cmd git rm " .. getPath(file), "nt")
+                    local file = commands.get_path(require("oil").get_cursor_entry().name)
+                    vim.fn.feedkeys(":Cmd git rm " .. get_path(file), "nt")
                 end
             },
         },

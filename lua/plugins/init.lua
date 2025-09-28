@@ -9,36 +9,13 @@ return {
     },
 
     {
-        'aspeddro/gitui.nvim',
-        config = function ()
-            require("gitui").setup()
-        end
-    },
-
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = require("plugins.config.lualine")
-    },
-
-    {
         "nvim-telescope/telescope.nvim",
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = require("plugins.config.telescope")
     },
 
     {
-        dir = "~/projects/oradark.nvim/",
-        -- "devEducaua/oradark.nvim",
-    },
-
-    {
-        "neovim/nvim-lspconfig",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-        },
-        config = require("plugins.config.lsp")
+        dir = "~/proj/oradark.nvim/", -- "devEducaua/oradark.nvim",
     },
 
     {
@@ -64,13 +41,8 @@ return {
     { 'windwp/nvim-autopairs', opts = {} },
 
     {
-        "slugbyte/lackluster.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-
-    {
         "nvim-treesitter/nvim-treesitter",
+        -- enabled = false,
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         config = require("plugins.config.treesitter")

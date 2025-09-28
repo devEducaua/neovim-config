@@ -20,28 +20,20 @@ git clone https://github.com/devEducaua/neovim-config.git ~/.config/nvim
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
-│   ├── config
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── snippets.lua
-│   └── plugins
-│       ├── config
-│       │   ├── cmp.lua
-│       │   ├── lsp.lua
-│       │   ├── lualine.lua
-│       │   ├── mason.lua
-│       │   ├── oil.lua
-│       │   ├── telescope.lua
-│       │   ├── transparent.lua
-│       │   └── treesitter.lua
-│       └── init.lua
-├── plugin
-│   ├── cmd.lua
-│   ├── compile.lua
-│   ├── licenses.lua
-│   ├── man.lua
-│   ├── todo.lua
-│   └── zoom.lua
+│   ├── commands.lua
+│   ├── keymaps.lua
+│   ├── lazy.lua
+│   ├── plugins
+│   │   ├── config
+│   │   │   ├── cmp.lua
+│   │   │   ├── lsp.lua
+│   │   │   ├── lualine.lua
+│   │   │   ├── mason.lua
+│   │   │   ├── oil.lua
+│   │   │   ├── telescope.lua
+│   │   │   └── treesitter.lua
+│   │   └── init.lua
+│   └── snippets.lua
 ├── PLUGINS.md
 └── README.md
 ```
