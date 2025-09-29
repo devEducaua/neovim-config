@@ -18,6 +18,7 @@ vim.o.softtabstop = 4
 vim.o.expandtab = true
 vim.o.showmode = false
 vim.o.cmdheight = 1
+vim.o.winborder = "rounded"
 
 vim.g.mapleader = " "
 
@@ -36,7 +37,7 @@ function git_branch()
     if not handle then return '' end
     local result = handle:read("*a")
     handle:close()
-  
+
     result = result:gsub("\n", "")
     if result ~= '' and result ~= ' ' then
         return '•' .. result .. '•'
@@ -60,9 +61,12 @@ local statusline = {
 vim.o.statusline = table.concat(statusline, '')
 
 vim.diagnostic.config({
-    virtual_lines = {
-        current_line = true,
-    },
+    -- virtual_lines = {
+    --     current_line = true,
+    -- },
+    virtual_text = {
+        current_line = true
+    }
 })
 
 vim.api.nvim_create_autocmd('BufEnter', {
