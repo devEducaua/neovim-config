@@ -72,26 +72,10 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = "man",
-    callback = function ()
-        vim.keymap.set('n', '<A-l>', function() vim.opt_local.relativenumber = not vim.opt_local.relativenumber:get() end, { buffer = true })
-    end
-})
-
 vim.api.nvim_create_autocmd('TermOpen', {
     group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
     callback = function ()
         vim.o.number = false
         vim.o.relativenumber = false
-    end
-})
-
-vim.api.nvim_create_autocmd('BufEnter', {
-    pattern = { "c", "sh", "man" },
-    callback = function ()
-        vim.keymap.set("n", "K", function ()
-            vim.cmd("Man " .. vim.fn.expand("<cword>"))
-        end, { buffer = true })
     end
 })

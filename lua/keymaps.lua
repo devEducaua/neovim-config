@@ -27,7 +27,7 @@ map('n', '<leader>gp', '<space>;iCmd git push -u origin main', {})
 map('n', '<leader>gcr', '<space>;iCmd git clone ', {})
 
 map('n', '<leader>w', ':w<CR>', {})
-map('n', '<leader>x', ':w<CR> -', {})
+map('n', '<leader>x', ':w<CR> :Oil<CR>', {})
 map('n', '<leader>!', ':q!<CR>', {})
 map('n', '<leader>q', ':bd!<CR>', {})
 map("n", "<leader>s", ":w<CR>:so<CR>", {})
@@ -58,4 +58,20 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
   callback = function()
     map("n", "<Esc>", "<C-c>", { buffer = true, noremap = true })
   end,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = { "c", "sh", "man" },
+    callback = function ()
+        map("n", "K", function ()
+            vim.cmd("Man " .. vim.fn.expand("<cword>"))
+        end, { buffer = true })
+    end
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = "man",
+    callback = function ()
+        map('n', '<A-l>', function() vim.opt_local.relativenumber = not vim.opt_local.relativenumber:get() end, { buffer = true })
+    end
 })
