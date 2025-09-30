@@ -1,8 +1,7 @@
-require("config.lazy")
 require("lsp")
 require("keymaps")
 require("commands")
-require("snippets")
+require("plugins")
 
 vim.cmd("set termguicolors")
 vim.cmd("syntax enable")
@@ -19,8 +18,6 @@ vim.o.expandtab = true
 vim.o.showmode = false
 vim.o.cmdheight = 1
 vim.o.winborder = "rounded"
-
-vim.g.mapleader = " "
 
 vim.opt.list = true
 vim.opt.listchars = {

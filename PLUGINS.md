@@ -1,6 +1,5 @@
-# Lazy.nvim
-- cmp
-- lspconfig 
+# pckr.nvim
+- blink
 - mason
 - luasnip
 - nvim-autopairs

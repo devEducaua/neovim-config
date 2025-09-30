@@ -1,6 +1,7 @@
 local commands = require("commands")
 
 local map = vim.keymap.set
+vim.g.mapleader = " "
 
 map({'i', 'v', 't'}, "jk", "<esc>")
 

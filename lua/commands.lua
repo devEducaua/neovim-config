@@ -18,7 +18,7 @@ M.get_license = function ()
     --     vim.fn.feedkeys("<space>cwget -O LICENSE https://raw.githubusercontent.com/licenses/license-templates/refs/heads/master/templates/" .. l .. ".txt<CR>")
     -- end)
     vim.ui.input({ prompt = "license: "}, function (license)
-        vim.cmd("!cp ~/notes/licenses/" .. license .. ".txt LICENSE")
+        vim.cmd("!cp ~/doc/licenses/" .. license .. ".txt LICENSE")
     end)
 end
 
