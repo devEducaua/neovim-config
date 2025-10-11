@@ -1,0 +1,16 @@
+nvim setup
+==========
+this is my *comfy* nvim setup.
+
+plugins
+-------
+pckr
+oil
+telescope
+mason
+luasnip
+blink
+oradark
+comment
+treesitter
+nvim-autopairs
