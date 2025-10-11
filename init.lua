@@ -18,6 +18,7 @@ vim.o.expandtab = true
 vim.o.showmode = false
 vim.o.cmdheight = 1
 vim.o.winborder = "rounded"
+vim.g.mapleader = " "
 
 vim.opt.list = true
 vim.opt.listchars = {
@@ -29,6 +30,7 @@ vim.opt.listchars = {
 }
 vim.opt.fillchars = { eob = " ", vert = " ", horiz = " " }
 
+
 function git_branch()
     local handle = io.popen('git rev-parse --abbrev-ref HEAD 2>/dev/null')
     if not handle then return '' end
@@ -37,13 +39,13 @@ function git_branch()
 
     result = result:gsub("\n", "")
     if result ~= '' and result ~= ' ' then
-        return '•' .. result .. '•'
+        return 'at •' .. result .. '•'
     end
     return ''
 end
 
 local statusline = {
-    ' %t',
+    '%t',
     '%r',
     ' %{v:lua.git_branch()}',
     '%m',
@@ -58,12 +60,12 @@ local statusline = {
 vim.o.statusline = table.concat(statusline, '')
 
 vim.diagnostic.config({
-    -- virtual_lines = {
-    --     current_line = true,
-    -- },
-    virtual_text = {
-        current_line = true
-    }
+    virtual_lines = {
+        current_line = true,
+    },
+    -- virtual_text = {
+    --     current_line = true
+    -- }
 })
 
 vim.api.nvim_create_autocmd('BufEnter', {
@@ -73,10 +75,12 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
 })
 
-vim.api.nvim_create_autocmd('TermOpen', {
-    group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
-    callback = function ()
-        vim.o.number = false
-        vim.o.relativenumber = false
-    end
-})
+-- vim.api.nvim_create_autocmd('TermOpen', {
+--     group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+--     callback = function ()
+--         vim.cmd("vsplit")
+--         vim.cmd.wincmd("L")
+--         -- vim.o.number = false
+--         -- vim.o.relativenumber = false
+--     end
+-- })
