@@ -28,8 +28,6 @@ return function ()
             ["<space>h"] = {
                 desc = "pass file to command",
                 callback = function ()
-        --         local file = require("oil").get_cursor_entry().name
-        --         vim.api.nvim_set_keymap('n', "<space>h", "<space>;Cmd " .. file .. "jkB", {})
                    local name = commands.get_path(require("oil").get_cursor_entry().name)
                    local keys = "q:" .. "iCmd " .. name .. "<esc>Bi"
                    keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
@@ -37,36 +35,13 @@ return function ()
                 end
             },
 
-            -- ["<space>ca"] = {
-            --     desc = "cat the file",
-            --     callback = function ()
-            --         local file = require("oil").get_cursor_entry().name
-            --         vim.cmd(":Cmd cat " .. getPath(file))
-            --     end
-            -- },
-
             ["<space>r"] = {
                 desc = "run file executables or Makefiles",
                 callback = function ()
                     local name = require("oil").get_cursor_entry().name
                     commands.exec_by_name(name)
-                    -- if (name == "Makefile") then
-                    --     vim.cmd(":Cmd make")
-                    -- else
-                    --     vim.cmd(":Cmd ./" .. get_path(name))
-                    -- end
                 end
             },
-
-            -- ["<space>m"] = {
-            --     desc = "run Makefiles with params",
-            --     callback = function ()
-            --         local file = require("oil").get_cursor_entry().name
-            --         if (file == "Makefile") then
-            --             vim.fn.feedkeys(":Cmd make ", "nt")
-            --         end
-            --     end
-            -- },
 
             ["<space>ga"] = {
                 desc = "stage file on git",

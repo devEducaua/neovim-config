@@ -12,11 +12,7 @@ M.get_path = function(file)
     return local_path
 end
 
--- when internet go back test this
 M.get_license = function ()
-    -- vim.ui.input({ prompt = "license: "}, function (l)
-    --     vim.fn.feedkeys("<space>cwget -O LICENSE https://raw.githubusercontent.com/licenses/license-templates/refs/heads/master/templates/" .. l .. ".txt<CR>")
-    -- end)
     vim.ui.input({ prompt = "license: "}, function (license)
         vim.cmd("!cp ~/doc/licenses/" .. license .. ".txt LICENSE")
     end)
