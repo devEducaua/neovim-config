@@ -1,3 +1,4 @@
+local servers = { "luals", "ts_ls", "clangd", "bashls", "astro-language-server", "gopls", "cssls", "html" }
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
@@ -43,9 +44,15 @@ vim.lsp.config["luals"] = {
     }
 }
 
+vim.lsp.config["astro-language-server"] = {
+    cmd = { "astro-language-server" },
+    filetypes = { "astro" },
+    root_markers = { "astro.config.mjs" }
+}
+
 vim.lsp.config["ts_ls"] = {
     cmd = { "typescript-language-server", "--stdio" },
-    filetypes = { "typescript" },
+    filetypes = { "typescript", "javascript" },
     root_markers = { "node_modules/", "package.json", ".git" }
 }
 
@@ -60,7 +67,23 @@ vim.lsp.config["bashls"] = {
     filetypes = { "sh" }
 }
 
-local servers = { "luals", "ts_ls", "clangd", "bashls" }
+vim.lsp.config["gopls"] = {
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod" },
+    root_markers = { "go.mod" }
+}
+
+vim.lsp.config["cssls"] = {
+    cmd = { "vscode-css-language-server", "--stdio" },
+    filetypes = { "css", "scss", "less" },
+    root_markers = { "package.json", ".git" }
+}
+
+vim.lsp.config["html"] = {
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html", "astro" },
+    root_markers = { ".git" }
+}
 
 vim.lsp.enable(servers)
 for _, s in ipairs(servers) do
