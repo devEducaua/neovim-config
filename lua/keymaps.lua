@@ -28,8 +28,8 @@ map('n', '<leader>gco', '<space>;iCmd git commit -m "', {})
 map('n', '<leader>gp', '<space>;iCmd git push -u origin main', {})
 map('n', '<leader>gcr', '<space>;iCmd git clone ', {})
 
-map('n', '<leader>w', ':w<CR>', {})
-map('n', '<leader>x', ':w<CR> :Oil<CR>', {})
+map('n', '<leader>w', ':up<CR>', {})
+map('n', '<leader>x', ':up<CR> :Oil<CR>', {})
 map('n', '<leader>!', ':q!<CR>', {})
 map('n', '<leader>q', ':bd!<CR>', {})
 map("n", "<leader>s", ":w<CR>:so<CR>", {})
@@ -39,7 +39,6 @@ map("n", "<leader>tt", ":Telescope<CR>")
 map("n", "<leader>th", ":Telescope help_tags<CR>")
 
 map("n", "-", "<cmd>Oil<CR>", {})
-
 
 map({'i', 'n', 'v', 'x', 'c', 't'}, '<A-v>', function ()
     vim.cmd(":vsplit")
