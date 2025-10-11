@@ -74,13 +74,3 @@ vim.api.nvim_create_autocmd('BufEnter', {
         vim.o.linebreak = true
     end
 })
-
--- vim.api.nvim_create_autocmd('TermOpen', {
---     group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
---     callback = function ()
---         vim.cmd("vsplit")
---         vim.cmd.wincmd("L")
---         -- vim.o.number = false
---         -- vim.o.relativenumber = false
---     end
--- })
